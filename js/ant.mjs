@@ -1,5 +1,4 @@
-import { getRGB } from './utils.mjs'
-export default class Ant {
+class Ant {
   constructor(x = 0, y = 0, movesList = [
     { color: '#ffffff', direction: 1 },
     { color: '#000000', direction: -1 }
@@ -17,7 +16,7 @@ export default class Ant {
     this.direction = this._directionsList[this._directionIndex]
   }
   move(color) {
-    const moveIndex = this.movesList.findIndex(move => getRGB(move.color) === getRGB(color))
+    const moveIndex = this.movesList.findIndex(move => utils.getRGB(move.color) === utils.getRGB(color))
     const move = this.movesList[moveIndex]
     this._directionIndex = this._nextDirection(move.direction)
     this.direction = this._directionsList[this._directionIndex]
